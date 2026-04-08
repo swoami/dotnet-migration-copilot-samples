@@ -1,0 +1,10 @@
+# .github/copilot-setup-steps.yml
+- name: Setup Node
+  uses: actions/setup-node@v4
+  with:
+    node-version: '22'
+
+- name: Setup .NET
+  uses: actions/setup-dotnet@v5
+  with:
+    dotnet-version: '10.x'
