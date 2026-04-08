@@ -132,7 +132,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Data.SqlClient">
-      <HintPath>packages\Microsoft.Data.SqlClient.2.1.4\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
+      <HintPath>packages\Microsoft.Data.SqlClient.6.0.2\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Azure.Identity">
+      <HintPath>packages\Azure.Identity.1.14.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Azure.Core">
+      <HintPath>packages\Azure.Core.1.46.1\lib\net472\Azure.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces">
@@ -200,7 +208,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Identity.Client">
-      <HintPath>packages\Microsoft.Identity.Client.4.21.1\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+      <HintPath>packages\Microsoft.Identity.Client.4.71.1\lib\net472\Microsoft.Identity.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
