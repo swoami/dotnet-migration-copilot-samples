@@ -28,19 +28,21 @@ ContosoUniversity/
 
 ## Database Configuration
 
-The application uses SQL Server LocalDB with the following connection string in `Web.config`:
+The application uses Azure SQL Database with Managed Identity for authentication. Configure the connection string in `Web.config`:
 ```xml
   <connectionStrings>
-    <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ContosoUniversityNoAuthEFCore;Integrated Security=True;MultipleActiveResultSets=True" />
+    <add name="DefaultConnection" connectionString="Server=tcp:&lt;server-name&gt;.database.windows.net;Database=ContosoUniversityNoAuthEFCore;Authentication=Active Directory Default;TrustServerCertificate=True;MultipleActiveResultSets=True" />
   </connectionStrings>
 ```
+
+> Replace `<server-name>` with your Azure SQL Server name.
 
 ## Running the Application
 
 1. **Prerequisites**:
    - Visual Studio 2019 or later
    - IIS Express
-   - SQL Server LocalDB
+   - Azure SQL Database (with Managed Identity)
    - Microsoft Message Queue (MSMQ) Server enabled
 
 2. **Setup**:
