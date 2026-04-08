@@ -1,16 +1,19 @@
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace ContosoUniversity.Data
 {
-    public static class SchoolContextFactory
+    /// <summary>
+    /// Design-time factory for EF Core CLI tools (migrations, scaffolding).
+    /// Application code should use the DI-registered <see cref="SchoolContext"/> instead.
+    /// </summary>
+    public class SchoolContextFactory : IDesignTimeDbContextFactory<SchoolContext>
     {
-        public static SchoolContext Create()
+        public SchoolContext CreateDbContext(string[] args)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             var optionsBuilder = new DbContextOptionsBuilder<SchoolContext>();
-            optionsBuilder.UseSqlServer(connectionString);
-            
+            optionsBuilder.UseSqlServer(
+                "Server=(localdb)\\mssqllocaldb;Database=ContosoUniversityNoAuthEFCore;Trusted_Connection=True;");
             return new SchoolContext(optionsBuilder.Options);
         }
     }
